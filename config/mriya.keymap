@@ -9,8 +9,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
-#define NUM     1
-#define SYM     2
+#define SYM     1
+#define NUM     2
 #define NAV     3
 #define FUN     4
 #define KBCTRL  5
@@ -99,33 +99,6 @@
 
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-        num_layer {
-            label = "NUM";
-            /*
-┌───────┬───────┬───────┬───────┬───────┬───────┐                   ┌───────┬───────┬───────┬───────┬───────┬───────┐
-│       │      │   8   │   9   │       │       │                   │       │   7   │   8   │   9   │       │       │
-├───────┼───────┼───────┼───────┼───────┼───────┤                   ├───────┼───────┼───────┼───────┼───────┼───────┤
-│       │   4   │   5   │   6   │       │       │                   │       │   4   │   5   │   6   │       │       │
-├───────┼───────┼───────┼───────┼───────┼───────┤                   ├───────┼───────┼───────┼───────┼───────┼───────┤
-│       │   1   │   2   │   3   │   0   │   .   │                   │  0    │   1   │   2   │   3   │   .   │       │
-└───────┴───────┴───────┴───────┼───────┼───────┼───────┐   ┌───────┼───────┼───────┼───────┴───────┴───────┴───────┘
-                                │       │       │       │   │       │       │       │
-                                └───────┴───────┴───────┘   └───────┴───────┴───────┘
-            */
-
-            bindings = <
-                &trans &trans &trans &trans &trans &trans &trans &kp N7 &kp N8 &kp N9 &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &kp N4 &kp N5 &kp N6 &trans &trans
-                &trans &trans &trans &trans &trans &trans &kp N0 &kp N1 &kp N2 &kp N3 &kp DOT &trans  
-                               &trans &trans &trans       &to KBCTRL &trans &trans
-            >;
-        };
-
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
-
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
         sym_layer {
             label = "SYM";
             /*
@@ -142,14 +115,37 @@
 
             bindings = <
                 &trans &kp EXCL  &kp AT    &kp HASH  &kp DOLLAR &kp PERCENT   &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR &trans
-                &none  &kp GRAVE &kp MINUS &kp EQUAL &kp UNDER  &kp PLUS    &kp LEFT_BRACE &kp RIGHT_BRACE &kp PIPE &kp BACKSLASH &none &none
+                &none  &kp GRAVE &kp MINUS &kp EQUAL &kp UNDER  &kp PLUS      &kp LEFT_BRACE &kp RIGHT_BRACE &kp PIPE &kp BACKSLASH &none &none
                 &none  &kp TILDE &none     &none     &none      &none         &kp LT     &kp GT     &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp QUESTION &none
-                               &none &none &none                  &none &none &none
+                               &trans &trans &trans                  &trans &trans &trans
             >;
         };
 
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+ 
+        num_layer {
+            label = "NUM";
+            /*
+┌───────┬───────┬───────┬───────┬───────┬───────┐                   ┌───────┬───────┬───────┬───────┬───────┬───────┐
+│       │       │       │       │       │       │                   │       │   7   │   8   │   9   │       │       │
+├───────┼───────┼───────┼───────┼───────┼───────┤                   ├───────┼───────┼───────┼───────┼───────┼───────┤
+│       │       │       │       │       │       │                   │       │   4   │   5   │   6   │       │       │
+├───────┼───────┼───────┼───────┼───────┼───────┤                   ├───────┼───────┼───────┼───────┼───────┼───────┤
+│       │       │       │       │       │       │                   │  0    │   1   │   2   │   3   │   .   │       │
+└───────┴───────┴───────┴───────┼───────┼───────┼───────┐   ┌───────┼───────┼───────┼───────┴───────┴───────┴───────┘
+                                │       │       │       │   │       │       │       │
+                                └───────┴───────┴───────┘   └───────┴───────┴───────┘
+            */
+
+            bindings = <
+                &trans &kp EXCL  &kp AT    &kp HASH  &kp DOLLAR &kp PERCENT    &kp CARET &kp N7 &kp N8 &kp N9 &trans &trans
+                &none  &kp GRAVE &kp MINUS &kp EQUAL &kp UNDER  &kp PLUS       &kp LEFT_BRACE &kp N4 &kp N5 &kp N6 &trans &trans
+                &none  &kp TILDE &none     &none     &none      &none          &kp N0 &kp N1 &kp N2 &kp N3 &kp DOT &trans  
+                               &trans &trans &trans       &to KBCTRL &trans &trans
+            >;
+        };
+
+       // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         nav_layer {
             label = "NAV";
